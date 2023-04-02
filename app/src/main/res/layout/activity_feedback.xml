@@ -1,0 +1,185 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:id="@+id/question1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. How satisfied are you with the course content?"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:id="@+id/answer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question1"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radio1a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Very satisfied" />
+
+        <RadioButton
+            android:id="@+id/radio1b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Satisfied" />
+
+        <RadioButton
+            android:id="@+id/radio1c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Neutral" />
+
+
+
+        <RadioButton
+            android:id="@+id/radio1d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dissatisfied" />
+
+        <RadioButton
+            android:id="@+id/radio1e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Very dissatisfied" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/question2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. How was the instructor's teaching style?"
+        android:textSize="16sp"
+        android:layout_below="@id/answer1"
+        android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:id="@+id/answer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question2"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radio2a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Excellent" />
+
+        <RadioButton
+            android:id="@+id/radio2b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good" />
+
+        <RadioButton
+            android:id="@+id/radio2c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Average" />
+
+        <RadioButton
+            android:id="@+id/radio2d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Poor" />
+
+        <RadioButton
+            android:id="@+id/radio2e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terrible" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/question3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. How helpful were the course assignments?"
+        android:textSize="16sp"
+        android:layout_below="@id/answer2"
+        android:layout_marginTop="16dp" />
+
+    <RadioGroup
+        android:id="@+id/answer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question3"
+        android:layout_marginTop="8dp">
+
+        <RadioButton
+            android:id="@+id/radio3a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Very helpful" />
+
+        <RadioButton
+            android:id="@+id/radio3b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Helpful" />
+
+        <RadioButton
+            android:id="@+id/radio3c"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="Neutral" />
+
+        <RadioButton
+            android:id="@+id/radio3d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not helpful" />
+
+        <RadioButton
+            android:id="@+id/radio3e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Very not helpful" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/question4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4. Do you have any additional comments or suggestions?"
+        android:textSize="16sp"
+        android:layout_below="@id/answer3"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/comments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/question4"
+        android:layout_marginTop="8dp"
+        android:inputType="textMultiLine"
+        android:hint="Type your comments here" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comments"
+        android:layout_marginTop="16dp"
+        android:text="Submit" />
+</RelativeLayout>
+</ScrollView>
+
+
+
+
+
