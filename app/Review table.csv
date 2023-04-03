@@ -1,0 +1,31 @@
+course_id,course_name,feedback_id,user_id,Status,Reviews,Rating
+1,"computer architecture",1,2706001,active,Uuuuuuh,4.2
+2,"operating system",2,2706002,active,"It's an interesting class for me to learn about computer software.",NULL
+9,"artificial intelligence",3,2706002,active,"That's I mean um what",NULL
+7,"Programming language concept",4,2706002,active,,NULL
+8,"Software engineer",5,2706002,active,"Cooperating is good for work in future.",NULL
+2,"operating system",6,2706003,active,"It helped me manage my computer better.",NULL
+3,"computer network",7,2706003,active,"A lot of alogorithm",NULL
+5,"Data mining",8,2706003,active,"I hate it",NULL
+6,"Data structure",9,2706003,active,"I love it.",NULL
+1,"computer architecture",10,2706004,active,"It sucked.",NULL
+4,Cybersecurity,11,2706004,active,"Oh man",NULL
+10,"Machine learning",12,2706004,active,Interesting,NULL
+3,"computer network",13,2706005,active,"The professor was cool.",NULL
+5,"Data mining",14,2706005,active,"The professor is not cool",NULL
+8,"Software enginee",15,2706005,active,"Lot of free time to discuss",NULL
+2,"operating system",16,2706006,active,"I can operate my own system, thank you!",NULL
+7,"Programming language concept",17,2706006,active,"I hate calculating!!!!",NULL
+10,"Machine learning",18,2706006,active,"Is this a physical class?",NULL
+1,"computer architecture",19,2706007,active,"I can build a computer after this class!",NULL
+6,"Data structure",20,2706007,active,"I'm a beginner but I like it",NULL
+8,"Software engineer",21,2706007,active,NULL,NULL
+1,"computer architecture",22,2706008,active,"Hard for me, a lot of math problems",NULL
+6,"Data structure",23,2706008,active,"I have nothing to say about this.",NULL
+8,"Software enginee",24,2706008,active,"I can develop a software!",NULL
+2,"operating system",25,2706009,active,NULL,NULL
+5,"Data mining",26,2706009,active,"The kids yearn for the mines",NULL
+4,Cybersecurity,27,2706010,active,"I can set up my a strong password.",NULL
+5,"Data mining",28,2706010,active,"Easy A",NULL
+7,"Programming language concept",29,2706010,active,NULL,NULL
+8,"Software engineer",30,2706010,active,"Sudasivani is just beautiful, I love her",NULL
