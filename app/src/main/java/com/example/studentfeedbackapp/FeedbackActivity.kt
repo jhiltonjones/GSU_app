@@ -1,4 +1,6 @@
 package com.example.studentfeedbackapp
+
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -23,9 +25,9 @@ class FeedbackActivity : AppCompatActivity() {
             val message = "1. ${selected1?.text}\n2. ${selected2?.text}\n3. ${selected3?.text}\nComments: $commentsText"
 
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, ThankYouActivity::class.java)
+            startActivity(intent)
         }
     }
 }
-
-
-
