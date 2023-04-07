@@ -1,0 +1,6 @@
+Question_id,Question,OptionA,OptionB,OptionC,OptionD,"Created time","Updatd time",Completed_status,OptionE
+0,"I would highly recommend this course to other students","Strongly agree",Agree,Neutral,Disagree,03/39/2023,03/30/2023,Completed,"Strongly disagree"
+111,"The instructor was well prepared for the class.",Always,Often,Sometimes,Rarely,03/20/2023,03/21/2023,Completed,Never
+222,"The instructor showed an interest in helping students learn.",Always,Often,Sometimes,Rarely,03/21/2023,03/22/2023,Completed,Never
+333,"I received useful feedback on my performance on tests, papers, etc.",Always,Often,Sometimes,Rarely,03/22/2023,03/23/2023,Completed,Never
+444,"The lectures, tests, and assignments complemented each other.","Strongly agree",Agree,Neutral,Disagree,03/24/2023,03/25/2023,Completed,"Strongly disagree"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "341147444016",
+    "project_id": "student-feedback-app-97336",
+    "storage_bucket": "student-feedback-app-97336.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341147444016:android:e4085126019eb240d79ef5",
+        "android_client_info": {
+          "package_name": "com.example.studentfeedbackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341147444016-kqf6jbnqmkmj2uolnna2csdv2dg57mqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIAOyZ-Cqi5WPYg9Ol8LJt1PJC-xGK4Fk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341147444016-kqf6jbnqmkmj2uolnna2csdv2dg57mqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
