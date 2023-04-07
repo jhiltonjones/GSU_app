@@ -15,6 +15,7 @@ class ClassList : AppCompatActivity() {
         val philosophyButton = findViewById<Button>(R.id.btn_philosophy)
         val computerScienceButton = findViewById<Button>(R.id.btn_computer_science)
         val physicalEducationButton = findViewById<Button>(R.id.btn_physical_education)
+        val logoutButton = findViewById<Button>(R.id.btn_log_out)
 
         calculusButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -38,6 +39,10 @@ class ClassList : AppCompatActivity() {
 
         physicalEducationButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        logoutButton.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
     }

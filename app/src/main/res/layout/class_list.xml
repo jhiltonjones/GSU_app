@@ -19,8 +19,8 @@
         android:layout_height="wrap_content"
         android:text="Calculus"
         android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/btn_psychology"
@@ -28,29 +28,37 @@
         android:layout_height="wrap_content"
         android:text="Psychology"
         android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/btn_philosophy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Philosophy"
         android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/btn_computer_science"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Computer Science"
         android:textSize="20sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
     <Button
         android:id="@+id/btn_physical_education"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Physical Education"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btn_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
         android:textSize="20sp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"/>
