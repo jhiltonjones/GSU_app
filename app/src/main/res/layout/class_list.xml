@@ -6,12 +6,20 @@
     android:layout_height="match_parent"
     android:gravity="center">
 
+    <TextView
+        android:id="@+id/text_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Back Student! \n \n Which Class would you like to leave a review on today?"
+        android:textSize="20dp"
+        android:layout_marginBottom="32dp"/>
     <Button
         android:id="@+id/btn_calculus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculus"
         android:textSize="20sp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"/>
 
     <Button
