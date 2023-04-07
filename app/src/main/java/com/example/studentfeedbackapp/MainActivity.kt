@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val writeReviewButton = findViewById<Button>(R.id.btn_write_review)
 
         writeReviewButton.setOnClickListener {
-            val intent = Intent(this, ReviewActivity::class.java)
+            val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
         }
     }
