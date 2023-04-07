@@ -12,9 +12,9 @@ class ReviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review)
 
-        val button = findViewById<Button>(R.id.submit)
+        val submit_button = findViewById<Button>(R.id.submit_button)
 
-        button.setOnClickListener {
+        submit_button.setOnClickListener {
             // Code to run when the button is clicked
             val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
