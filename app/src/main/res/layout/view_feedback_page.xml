@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/review_title_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review Title" />
+
+    <TextView
+        android:id="@+id/review_title_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/review_rating_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review Rating" />
+
+    <TextView
+        android:id="@+id/review_rating_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/review_comment_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review Comment" />
+
+    <TextView
+        android:id="@+id/review_comment_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+</LinearLayout>

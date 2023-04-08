@@ -34,12 +34,18 @@ class FeedbackActivity : AppCompatActivity() {
             val reviewRating = reviewRatingBar.rating
             val reviewComment = reviewEditText.text.toString()
 
-            val Student = "Title ${reviewTitle}\n Rating ${reviewRating}\n Comment $reviewComment"
-
-            val intent = Intent(this, ThankYouActivity::class.java)
-            startActivity(intent)
+            // Save data to Firebase
             saveFireStore(reviewComment)
+
+            // Pass data to FeedbackPage activity
+            val intent = Intent(this, FeedbackPage::class.java).apply {
+                putExtra("reviewTitle", reviewTitle)
+                putExtra("reviewRating", reviewRating)
+                putExtra("reviewComment", reviewComment)
+            }
+            startActivity(intent)
         }
+
 
     }
     fun saveFireStore(commentsText:String){

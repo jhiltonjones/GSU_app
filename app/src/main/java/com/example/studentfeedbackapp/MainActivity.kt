@@ -16,5 +16,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, FeedbackActivity::class.java)
             startActivity(intent)
         }
+        val viewReview = findViewById<Button>(R.id.btn_view_review)
+
+        viewReview.setOnClickListener {
+            val intent = Intent(this, FeedbackPage::class.java)
+            startActivity(intent)
+        }
     }
 }
