@@ -1,5 +1,6 @@
 package com.example.studentfeedbackapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.media.Rating
 import android.os.Bundle
@@ -16,7 +17,9 @@ class FeedbackActivity : AppCompatActivity() {
     private lateinit var reviewTitleEditText: EditText
     private lateinit var reviewRatingBar: RatingBar
     private lateinit var reviewEditText: EditText
+    private lateinit var reviewNameText: EditText
     private lateinit var submitButton: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,19 +28,22 @@ class FeedbackActivity : AppCompatActivity() {
         reviewTitleEditText = findViewById(R.id.title_edittext)
         reviewRatingBar = findViewById(R.id.ratingbar)
         reviewEditText = findViewById(R.id.review_edittext)
+        reviewNameText = findViewById(R.id.NameText)
         submitButton = findViewById(R.id.submit)
 
         submitButton.setOnClickListener {
             val reviewTitle = reviewTitleEditText.text.toString()
+            val reviewName = reviewNameText.text.toString()
             val reviewRating = reviewRatingBar.rating
             val reviewComment = reviewEditText.text.toString()
 
             // Save data to Firestore
-            saveFirestore(reviewTitle, reviewRating, reviewComment)
+            saveFirestore(reviewTitle, reviewRating, reviewComment,reviewName)
 
             // Pass data to FeedbackPage activity
             val intent = Intent(this, FeedbackPage::class.java).apply {
                 putExtra("reviewTitle", reviewTitle)
+                putExtra("reviewName", reviewName)
                 putExtra("reviewRating", reviewRating)
                 putExtra("reviewComment", reviewComment)
             }
@@ -45,12 +51,13 @@ class FeedbackActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveFirestore(reviewTitle: String, reviewRating: Float, reviewComment: String) {
+    private fun saveFirestore(reviewTitle: String, reviewRating: Float, reviewComment: String,reviewName: String) {
         val studentID ="002551307"
         val db = FirebaseFirestore.getInstance()
 
         val reviewMap: HashMap<String, Any> = hashMapOf(
             "Title" to reviewTitle,
+            "Name" to reviewName,
             "Rating" to reviewRating,
             "Comment" to reviewComment,
             "StudentID" to studentID,

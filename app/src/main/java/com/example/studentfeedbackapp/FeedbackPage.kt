@@ -42,14 +42,30 @@ class FeedbackPage : AppCompatActivity() {
         db.collection("Classes").document(className).collection("Reviews")
             .get()
             .addOnSuccessListener { result ->
+
                 for (document in result) {
                     val reviewTitle = document.getString("Title")
                     val reviewRating = document.getDouble("Rating")
                     val reviewComment = document.getString("Comment")
+                    val reviewName = document.getString("Name")
+
+                    val reviewTextView = TextView(this)
+
+
 
                     // Create a new TextView to display the review
-                    val reviewTextView = TextView(this)
-                    reviewTextView.text = "$reviewTitle\nRating: $reviewRating\n$reviewComment"
+                    if (reviewName==null){
+                        val NameTitle = ""
+                        val reviewName = ""
+                        reviewTextView.text = "Title:$reviewTitle $NameTitle$reviewName\nRating: $reviewRating\n$reviewComment\n-----------------------------------------------------------------------------------------\n"
+                    }else{
+                        val NameTitle ="Name:"
+                        reviewTextView.text = "Title:$reviewTitle \n$NameTitle$reviewName\nRating: $reviewRating\n$reviewComment\n-----------------------------------------------------------------------------------------\n"
+                    }
+
+
+
+
                     reviewTextView.textSize = 16f
 
                     // Add the TextView to the LinearLayout
