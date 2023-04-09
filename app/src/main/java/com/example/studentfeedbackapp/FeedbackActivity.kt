@@ -8,10 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RatingBar
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FeedbackActivity : AppCompatActivity() {
-
 
     private lateinit var reviewTitleEditText: EditText
     private lateinit var reviewRatingBar: RatingBar
@@ -19,10 +19,8 @@ class FeedbackActivity : AppCompatActivity() {
     private lateinit var submitButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback)
-
 
         reviewTitleEditText = findViewById(R.id.title_edittext)
         reviewRatingBar = findViewById(R.id.ratingbar)
@@ -34,8 +32,8 @@ class FeedbackActivity : AppCompatActivity() {
             val reviewRating = reviewRatingBar.rating
             val reviewComment = reviewEditText.text.toString()
 
-            // Save data to Firebase
-            saveFireStore(reviewComment)
+            // Save data to Firestore
+            saveFirestore(reviewTitle, reviewRating, reviewComment)
 
             // Pass data to FeedbackPage activity
             val intent = Intent(this, FeedbackPage::class.java).apply {
@@ -45,34 +43,38 @@ class FeedbackActivity : AppCompatActivity() {
             }
             startActivity(intent)
         }
-
-
     }
-    fun saveFireStore(commentsText:String){
 
+    private fun saveFirestore(reviewTitle: String, reviewRating: Float, reviewComment: String) {
         val studentID ="002551307"
-        val reviewTitle = reviewTitleEditText.text.toString()
-        val reviewRating = reviewRatingBar.rating.toString()
-        val reviewComment = reviewEditText.text.toString()
-
         val db = FirebaseFirestore.getInstance()
-        val map: HashMap<String, String> = hashMapOf(
+
+        val reviewMap: HashMap<String, Any> = hashMapOf(
             "Title" to reviewTitle,
             "Rating" to reviewRating,
             "Comment" to reviewComment,
-            "StudentID" to studentID
+            "StudentID" to studentID,
+            "Timestamp" to FieldValue.serverTimestamp()
         )
 
         val className = "Psychology"
 
-        db.collection("Classes").document(className).collection(className+"Review").document(studentID)
-            .set(map)
+        db.collection("Classes").document(className)
+            .collection("Reviews").document()
+            .set(reviewMap)
             .addOnSuccessListener {
-                Toast.makeText(this@FeedbackActivity,"record added Successfully",Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@FeedbackActivity,
+                    "Record added successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-            .addOnFailureListener{
-                Toast.makeText(this@FeedbackActivity,"record Failed to add",Toast.LENGTH_SHORT).show()
+            .addOnFailureListener {
+                Toast.makeText(
+                    this@FeedbackActivity,
+                    "Failed to add record",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-
     }
 }

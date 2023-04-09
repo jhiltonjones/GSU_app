@@ -1,64 +1,70 @@
 package com.example.studentfeedbackapp
 
+
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
-import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
-
 class FeedbackPage : AppCompatActivity() {
-        private lateinit var reviewTitleEditText: TextView
-        private lateinit var reviewRatingBar: TextView
-        private lateinit var reviewEditText: TextView
-        private lateinit var backButton: Button
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.view_feedback_page)
+    private lateinit var reviewsLinearLayout: LinearLayout
 
-            val db = Firebase.firestore
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.view_feedback_page)
 
-            // Initialize views
-            reviewTitleEditText = findViewById(R.id.review_title_textview)
-            reviewRatingBar = findViewById(R.id.review_rating_textview)
-            reviewEditText = findViewById(R.id.review_comment_textview)
-            backButton = findViewById(R.id.back_button)
+        val dismissButton = findViewById<Button>(R.id.button_dismiss)
 
-            // Get student ID and class name
-            val studentID = "002551307"
-            val className = "Psychology"
+        reviewsLinearLayout = findViewById(R.id.reviews_linearlayout)
 
-            // Retrieve data from Firestore
-            db.collection("Classes").document(className).collection(className + "Review").document(studentID)
-                .get()
-                .addOnSuccessListener { document ->
-                    if (document.exists()) {
-                        // Get data from Firestore document
-                        val reviewTitle = document.getString("Title")
-                        val reviewRating = document.getString("Rating")
-                        val reviewComment = document.getString("Comment")
-
-                        // Set data to text views
-                        reviewTitleEditText.text = reviewTitle
-                        reviewRatingBar.text = reviewRating
-                        reviewEditText.text = reviewComment
-                    } else {
-                        // Handle the case where the document does not exist
-                        // ...
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    // Handle any errors
-                    // ...
-                }
-
-            backButton.setOnClickListener {
-                val intent = Intent(this, ThankYouActivity::class.java)
-                startActivity(intent)
-            }
+        dismissButton.setOnClickListener {
+            val intent = Intent(this, ThankYouActivity::class.java)
+            startActivity(intent)
         }
+
+
+
+        getReviewsFromFirestore()
     }
+
+    private fun getReviewsFromFirestore() {
+        val db = FirebaseFirestore.getInstance()
+        val className = "Psychology"
+
+        db.collection("Classes").document(className).collection("Reviews")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val reviewTitle = document.getString("Title")
+                    val reviewRating = document.getDouble("Rating")
+                    val reviewComment = document.getString("Comment")
+
+                    // Create a new TextView to display the review
+                    val reviewTextView = TextView(this)
+                    reviewTextView.text = "$reviewTitle\nRating: $reviewRating\n$reviewComment"
+                    reviewTextView.textSize = 16f
+
+                    // Add the TextView to the LinearLayout
+                    reviewsLinearLayout.addView(reviewTextView)
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d(TAG, "Error getting reviews: ", exception)
+            }
+    }
+
+    companion object {
+        private const val TAG = "FeedbackPage"
+    }
+}
+
+
+
