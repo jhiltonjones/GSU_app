@@ -54,6 +54,36 @@
             android:exported="true"
             android:label="@string/feedback_activity_title"
             android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".CalculusFeedbackPage"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".CalcViewFeedback"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".ThankYouActivityCalc"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".PsychFeedbackPage"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".PsychViewFeedback"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".ThankYouActivityPsych"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
     </application>
 
 </manifest>

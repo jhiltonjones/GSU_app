@@ -1,0 +1,83 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title_textviewc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review Title" />
+
+    <EditText
+        android:id="@+id/title_edittextc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter Review Title"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/name_textViewc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+
+    <EditText
+        android:id="@+id/NameTextc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Enter your name (Optional"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/rating_textviewc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review Star Rating" />
+
+    <RatingBar
+        android:id="@+id/ratingbarc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Rating bar for course feedback"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1" />
+
+
+    <TextView
+        android:id="@+id/review_textviewc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review" />
+
+    <EditText
+        android:id="@+id/review_edittextc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write a review..."
+        android:inputType="textMultiLine"
+        android:minLines="3" />
+
+    <Button
+        android:id="@+id/submitc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+

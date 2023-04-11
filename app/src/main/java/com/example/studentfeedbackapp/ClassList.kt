@@ -18,32 +18,36 @@ class ClassList : AppCompatActivity() {
         val logoutButton = findViewById<Button>(R.id.btn_log_out)
 
         calculusButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, CalculusFeedbackPage::class.java)
             startActivity(intent)
         }
 
         psychologyButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, PsychFeedbackPage::class.java)
             startActivity(intent)
         }
 
         philosophyButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startFeedbackActivity("Philosophy")
         }
 
         computerScienceButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startFeedbackActivity("Computer Science")
         }
 
         physicalEducationButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startFeedbackActivity("Physical Education")
         }
         logoutButton.setOnClickListener {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun startFeedbackActivity(className: String) {
+        val intent = Intent(this, FeedbackActivity::class.java).apply {
+            putExtra("class", className)
+        }
+        startActivity(intent)
     }
 }

@@ -32,15 +32,17 @@ class FeedbackActivity : AppCompatActivity() {
         submitButton = findViewById(R.id.submit)
 
         submitButton.setOnClickListener {
+
             val reviewTitle = reviewTitleEditText.text.toString()
             val reviewName = reviewNameText.text.toString()
             val reviewRating = reviewRatingBar.rating
             val reviewComment = reviewEditText.text.toString()
 
-            // Save data to Firestore
-            saveFirestore(reviewTitle, reviewRating, reviewComment,reviewName)
 
-            // Pass data to FeedbackPage activity
+
+            saveFirestore( reviewTitle, reviewRating, reviewComment,reviewName)
+
+
             val intent = Intent(this, FeedbackPage::class.java).apply {
                 putExtra("reviewTitle", reviewTitle)
                 putExtra("reviewName", reviewName)

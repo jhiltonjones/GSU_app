@@ -18,11 +18,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/scrollview_description">
 
-        <!-- Other elements inside ScrollView -->
-
-
-
-
+        
     <LinearLayout
             android:id="@+id/reviews_linearlayout"
             android:layout_width="match_parent"

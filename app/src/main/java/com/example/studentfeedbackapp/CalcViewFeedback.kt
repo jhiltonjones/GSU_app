@@ -1,6 +1,5 @@
 package com.example.studentfeedbackapp
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +7,9 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.startActivity
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
-class FeedbackPage : AppCompatActivity() {
+class CalcViewFeedback : AppCompatActivity() {
 
     private lateinit var reviewsLinearLayout: LinearLayout
 
@@ -26,7 +22,7 @@ class FeedbackPage : AppCompatActivity() {
         reviewsLinearLayout = findViewById(R.id.reviews_linearlayout)
 
         dismissButton.setOnClickListener {
-            val intent = Intent(this, ThankYouActivity::class.java)
+            val intent = Intent(this, ThankYouActivityCalc::class.java)
             startActivity(intent)
         }
 
@@ -37,9 +33,9 @@ class FeedbackPage : AppCompatActivity() {
 
     private fun getReviewsFromFirestore() {
         val db = FirebaseFirestore.getInstance()
-        val className = "Psychology"
+        val className = "Calculus"
 
-        db.collection("Classes").document(className).collection("Reviews")
+        db.collection("Classes_Calc").document(className).collection("Reviews_Calc")
             .get()
             .addOnSuccessListener { result ->
 
@@ -81,6 +77,3 @@ class FeedbackPage : AppCompatActivity() {
         private const val TAG = "FeedbackPage"
     }
 }
-
-
-
