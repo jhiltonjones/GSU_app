@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/text_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What class would you like to view the reviews for?"
+        android:textSize="20dp"
+        android:layout_marginBottom="32dp"/>
+    <Button
+        android:id="@+id/btn_calculus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculus"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btn_psychology"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Psychology"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btn_philosophy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Philosophy"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btn_computer_science"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer Science"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btn_physical_education"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Physical Education"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btn_log_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:textSize="20sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"/>
+
+</LinearLayout>

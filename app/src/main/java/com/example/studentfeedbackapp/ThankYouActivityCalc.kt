@@ -18,9 +18,7 @@ class ThankYouActivityCalc : AppCompatActivity() {
             startActivity(intent)
         }
         viewFeedbackButton.setOnClickListener {
-            val intent = Intent(this, ClassList::class.java)
-            val passedName = intent.getStringExtra("classname");
-            intent.putExtra("classname",passedName);
+            val intent = Intent(this, ClassListView::class.java)
             startActivity(intent)
         }
     }
