@@ -10,15 +10,17 @@ class ThankYouActivityCalc : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.submit_feedback_confirmation_calc)
 
-        val writeReviewButton = findViewById<Button>(R.id.btn_home_menuc)
+        val homeButton = findViewById<Button>(R.id.btn_home_menuc)
         val viewFeedbackButton = findViewById<Button>(R.id.btn_view_feedbackc)
 
-        writeReviewButton.setOnClickListener {
+        homeButton.setOnClickListener {
             val intent = Intent(this, ClassList::class.java)
             startActivity(intent)
         }
         viewFeedbackButton.setOnClickListener {
-            val intent = Intent(this, CalcViewFeedback::class.java)
+            val intent = Intent(this, ClassList::class.java)
+            val passedName = intent.getStringExtra("classname");
+            intent.putExtra("classname",passedName);
             startActivity(intent)
         }
     }

@@ -18,12 +18,17 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/scrollview_description">
 
-        
-    <LinearLayout
+
+        <LinearLayout
             android:id="@+id/reviews_linearlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical" >
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+        </LinearLayout>
 
     </ScrollView>
 

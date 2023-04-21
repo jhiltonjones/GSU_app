@@ -33,9 +33,15 @@ class CalcViewFeedback : AppCompatActivity() {
 
     private fun getReviewsFromFirestore() {
         val db = FirebaseFirestore.getInstance()
-        val className = "Calculus"
+        var className = "";
+        val passedName = intent.getStringExtra("classname");
+        if(passedName==null){
+            className ="void";
+        }else {
+            className = passedName;
+        }
 
-        db.collection("Classes_Calc").document(className).collection("Reviews_Calc")
+        db.collection("Classes").document(className).collection("Reviews")
             .get()
             .addOnSuccessListener { result ->
 

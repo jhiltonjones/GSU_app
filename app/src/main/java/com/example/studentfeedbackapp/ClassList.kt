@@ -1,9 +1,9 @@
 package com.example.studentfeedbackapp
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.content.Intent
+import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class ClassList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,27 +16,34 @@ class ClassList : AppCompatActivity() {
         val computerScienceButton = findViewById<Button>(R.id.btn_computer_science)
         val physicalEducationButton = findViewById<Button>(R.id.btn_physical_education)
         val logoutButton = findViewById<Button>(R.id.btn_log_out)
-
+        val intent = Intent(this, FeedbackActivity::class.java);
         calculusButton.setOnClickListener {
-            val intent = Intent(this, CalculusFeedbackPage::class.java)
+           // val intent = Intent(this, CalculusFeedbackPage::class.java)
+            intent.putExtra("classname", "Calculus");
             startActivity(intent)
         }
 
         psychologyButton.setOnClickListener {
-            val intent = Intent(this, PsychFeedbackPage::class.java)
+           // val intent = Intent(this, PsychFeedbackPage::class.java)
+            intent.putExtra("classname", "Psychology");
             startActivity(intent)
         }
 
         philosophyButton.setOnClickListener {
-            startFeedbackActivity("Philosophy")
+            intent.putExtra("classname", "Philosophy");
+            startActivity(intent)
         }
 
         computerScienceButton.setOnClickListener {
-            startFeedbackActivity("Computer Science")
+
+            intent.putExtra("classname", "Computer_Science");
+            startActivity(intent)
         }
 
         physicalEducationButton.setOnClickListener {
-            startFeedbackActivity("Physical Education")
+
+            intent.putExtra("classname", "Physical_Education");
+            startActivity(intent)
         }
         logoutButton.setOnClickListener {
             val intent = Intent(this, Login::class.java)

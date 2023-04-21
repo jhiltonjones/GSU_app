@@ -42,14 +42,21 @@ class FeedbackActivity : AppCompatActivity() {
 
             saveFirestore( reviewTitle, reviewRating, reviewComment,reviewName)
 
-
-            val intent = Intent(this, FeedbackPage::class.java).apply {
+            val passedName = intent.getStringExtra("classname");
+            val intent = Intent(this, CalcViewFeedback::class.java).apply {
                 putExtra("reviewTitle", reviewTitle)
                 putExtra("reviewName", reviewName)
                 putExtra("reviewRating", reviewRating)
                 putExtra("reviewComment", reviewComment)
+                putExtra("classname", passedName);
             }
             startActivity(intent)
+
+            //val intent = Intent(this, CalcViewFeedback::class.java);
+            //val passedName = intent.getStringExtra("classname");
+            //intent.putExtra("classname", passedName);
+           // startActivity(intent);
+
         }
     }
 
@@ -65,9 +72,13 @@ class FeedbackActivity : AppCompatActivity() {
             "StudentID" to studentID,
             "Timestamp" to FieldValue.serverTimestamp()
         )
-
-        val className = "Psychology"
-
+        var className="";
+        val passedName = intent.getStringExtra("classname");
+        if(passedName==null){
+            className ="void";
+        }else {
+            className = passedName;
+        }
         db.collection("Classes").document(className)
             .collection("Reviews").document()
             .set(reviewMap)

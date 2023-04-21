@@ -9,17 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 class ThankYouActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.submit_feedback_confirmation)
+        setContentView(R.layout.submit_feedback_confirmation_calc)
 
-        val writeReviewButton = findViewById<Button>(R.id.btn_home_menu)
-        val viewFeedbackButton = findViewById<Button>(R.id.btn_view_feedback)
+        val homeButton = findViewById<Button>(R.id.btn_home_menuc)
+        val viewFeedbackButton = findViewById<Button>(R.id.btn_view_feedbackc)
 
-        writeReviewButton.setOnClickListener {
+        homeButton.setOnClickListener {
             val intent = Intent(this, ClassList::class.java)
             startActivity(intent)
         }
         viewFeedbackButton.setOnClickListener {
-            val intent = Intent(this, FeedbackPage::class.java)
+            val intent = Intent(this, ClassList::class.java)
+            val passedName = intent.getStringExtra("classname");
+            intent.putExtra("classname",passedName);
             startActivity(intent)
         }
     }
