@@ -39,6 +39,8 @@ class Login : AppCompatActivity() {
                             Toast.LENGTH_SHORT).show()
                         // Launch the ClassList activity
                         val intent = Intent(this, ClassList::class.java)
+                        intent.putExtra("useremail",email)
+                        println("Sent:"+email)
                         startActivity(intent)
                     } else {
                         // If sign in fails, display a message to the user.

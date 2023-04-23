@@ -2,13 +2,17 @@ package com.example.studentfeedbackapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.ktx.database
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class Register : AppCompatActivity() {
@@ -27,7 +31,7 @@ class Register : AppCompatActivity() {
         val idEditText = findViewById<EditText>(R.id.register_id)
         val emailEditText = findViewById<EditText>(R.id.register_email)
         val passwordEditText = findViewById<EditText>(R.id.register_password)
-        
+
 
 
         registerButton.setOnClickListener {
@@ -35,6 +39,7 @@ class Register : AppCompatActivity() {
             val id = idEditText.text.toString()
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
+            val age = 19
 
             // Call the Firebase Authentication API to create a new user with the specified email and password
             auth.createUserWithEmailAndPassword(email, password)
@@ -42,14 +47,16 @@ class Register : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // User registration successful, update the user profile with the name and id fields
                         val user = auth.currentUser
-                        val profileUpdates = com.google.firebase.auth.UserProfileChangeRequest.Builder()
-                            .setDisplayName(name)
-                            .build()
+                        val profileUpdates =
+                            com.google.firebase.auth.UserProfileChangeRequest.Builder()
+                                .setDisplayName(name)
+                                .build()
 
                         user?.updateProfile(profileUpdates)?.addOnCompleteListener {
                             if (it.isSuccessful) {
                                 // User profile update successful, navigate to the ClassList activity
                                 val intent = Intent(this, ClassList::class.java)
+                                saveFirestore(email,name,age,id)
                                 startActivity(intent)
                                 finish()
                             } else {
@@ -81,5 +88,30 @@ class Register : AppCompatActivity() {
                 }
         }
     }
-}
 
+    private fun saveFirestore(Email: String, Name: String, Age: Int, StudentID: String) {
+        val db = FirebaseFirestore.getInstance()
+
+        val reviewMap: HashMap<String, Any> = hashMapOf(
+            "Email" to Email,
+            "StudentID" to StudentID,
+            "Name" to Name,
+            "Age" to Age,
+            "StudentID" to StudentID,
+            "Timestamp" to FieldValue.serverTimestamp()
+        )
+
+        db.collection("Students").document(Email)
+            .set(reviewMap)
+            .addOnSuccessListener {
+                Toast.makeText(
+                    this@Register,
+                    "Record added successfully",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            .addOnFailureListener {
+
+            }
+    }
+}

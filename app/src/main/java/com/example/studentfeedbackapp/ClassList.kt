@@ -20,6 +20,7 @@ class ClassList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.class_list)
         searchView = findViewById(R.id.search_view)
+        val UserEmail = intent.getStringExtra("useremail")
 
         // Create the list of classes and adapter
         classList = mutableListOf(
@@ -95,9 +96,10 @@ class ClassList : AppCompatActivity() {
         }
 
         // Set the click listener for the logout button
-        val logoutButton: Button = findViewById(R.id.btn_log_out)
-        logoutButton.setOnClickListener {
-            val intent = Intent(this, Login::class.java)
+        val ProfileButton: Button = findViewById(R.id.profile)
+        ProfileButton.setOnClickListener {
+            val intent = Intent(this, Profile::class.java)
+            intent.putExtra("useremail",UserEmail)
             startActivity(intent)
         }
     }
