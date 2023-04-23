@@ -13,4 +13,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="feedback_activity_title">1</string>
     <string name="dismiss">Dismiss</string>
+
+
 </resources>

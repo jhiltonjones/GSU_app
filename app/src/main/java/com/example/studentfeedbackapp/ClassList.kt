@@ -11,46 +11,53 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ClassList : AppCompatActivity() {
 
+    private lateinit var classList: MutableList<String>
     private lateinit var searchView: SearchView
     private lateinit var adapter: ArrayAdapter<String>
-    private lateinit var classList: MutableList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.class_list)
-
-        // Initialize the search bar and set the query listener
         searchView = findViewById(R.id.search_view)
+
+        // Create the list of classes and adapter
+        classList = mutableListOf(
+            "Calculus",
+            "Psychology",
+            "Philosophy",
+            "Computer Science",
+            "Physical Education",
+            "Music",
+            "Theatre",
+            "Physics",
+            "Chemistry",
+            "Biology",
+            "English Literature",
+            "English Language",
+            "Geography",
+            "Politics",
+            "History"
+        )
+        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, classList)
+
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                val filteredClassNames = classList.filter { it.contains(newText ?: "", true) }
-                adapter.clear()
-                adapter.addAll(filteredClassNames)
+                if (newText.isNullOrEmpty()) {
+                    adapter.clear()
+                    adapter.addAll(classList)
+                } else {
+                    val filteredClassNames = classList.filter { it.contains(newText, true) }
+                    adapter.clear()
+                    adapter.addAll(filteredClassNames)
+                }
                 adapter.notifyDataSetChanged()
                 return true
             }
         })
-
-        // Create the list of classes and adapter
-        classList = mutableListOf("Calculus", "Psychology", "Philosophy", "Computer Science", "Physical Education","Music", "Theatre", "Physics", "Chemistry", "Biology", "English Literature", "English Language", "Geography", "Politics" , "History")
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, classList)
-
-        val searchView = findViewById<SearchView>(R.id.search_view)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
-            override fun onQueryTextChange(newText: String?): Boolean {
-                val filteredClassNames = classList.filter { it.contains(newText ?: "", true) }
-                updateClassButtons(filteredClassNames)
-                return true
-            }
-        })
-
 
         // Set the adapter to the ListView
         val listView: ListView = findViewById(R.id.list_view)
@@ -60,11 +67,10 @@ class ClassList : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         listView.setOnItemClickListener { _, _, position, _ ->
             val className = classList[position]
-            intent.putExtra("classname",className)
+            intent.putExtra("classname", className)
             startActivity(intent)
-            println("className:"+className)
+            println("className:" + className)
             println("test")
-
         }
 
         // Set the click listener for the logout button
@@ -74,6 +80,8 @@ class ClassList : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+
 
     private fun updateClassButtons(classNames: List<String>) {
         val calculusButton = findViewById<Button>(R.id.btn_calculus)
