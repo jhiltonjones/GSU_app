@@ -67,13 +67,13 @@ class ClassList : AppCompatActivity() {
                 if (newText.isNullOrEmpty()) {
                     adapter.clear()
                     adapter.addAll(classListtest)
-                    println("isempty")
+
 
                 } else {
                     val filteredClassNames = classList.filter { it.contains(newText, true) }
                     adapter.clear()
                     adapter.addAll(filteredClassNames)
-                    println("notempty")
+
                 }
                 adapter.notifyDataSetChanged()
                 return true
