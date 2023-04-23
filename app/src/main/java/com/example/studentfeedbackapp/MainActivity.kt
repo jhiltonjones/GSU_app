@@ -13,13 +13,20 @@ class MainActivity : AppCompatActivity() {
         val writeReviewButton = findViewById<Button>(R.id.btn_write_review)
 
         writeReviewButton.setOnClickListener {
+            val passedname= intent.getStringExtra("classname")
             val intent = Intent(this, FeedbackActivity::class.java)
+
+            intent.putExtra("classname",passedname)
             startActivity(intent)
         }
         val viewReview = findViewById<Button>(R.id.btn_view_review)
 
         viewReview.setOnClickListener {
+            val passedName= intent.getStringExtra("classname")
             val intent = Intent(this, FeedbackPage::class.java)
+
+            intent.putExtra("classname",passedName)
+            println("name:"+passedName)
             startActivity(intent)
         }
     }

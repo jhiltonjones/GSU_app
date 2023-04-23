@@ -57,9 +57,14 @@ class ClassList : AppCompatActivity() {
         listView.adapter = adapter
 
         // Set the click listener for each item in the ListView
+        val intent = Intent(this, MainActivity::class.java)
         listView.setOnItemClickListener { _, _, position, _ ->
             val className = classList[position]
-            startFeedbackActivity(className)
+            intent.putExtra("classname",className)
+            startActivity(intent)
+            println("className:"+className)
+            println("test")
+
         }
 
         // Set the click listener for the logout button
