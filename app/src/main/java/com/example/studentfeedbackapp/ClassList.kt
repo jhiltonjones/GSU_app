@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 class ClassList : AppCompatActivity() {
 
     private lateinit var classList: MutableList<String>
+    private lateinit var classListtest: MutableList<String>
     private lateinit var searchView: SearchView
     private lateinit var adapter: ArrayAdapter<String>
 
@@ -38,6 +39,23 @@ class ClassList : AppCompatActivity() {
             "Politics",
             "History"
         )
+        classListtest = mutableListOf(
+            "Calculus",
+            "Psychology",
+            "Philosophy",
+            "Computer Science",
+            "Physical Education",
+            "Music",
+            "Theatre",
+            "Physics",
+            "Chemistry",
+            "Biology",
+            "English Literature",
+            "English Language",
+            "Geography",
+            "Politics",
+            "History"
+        )
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, classList)
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -48,11 +66,14 @@ class ClassList : AppCompatActivity() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText.isNullOrEmpty()) {
                     adapter.clear()
-                    adapter.addAll(classList)
+                    adapter.addAll(classListtest)
+                    println("isempty")
+
                 } else {
                     val filteredClassNames = classList.filter { it.contains(newText, true) }
                     adapter.clear()
                     adapter.addAll(filteredClassNames)
+                    println("notempty")
                 }
                 adapter.notifyDataSetChanged()
                 return true
