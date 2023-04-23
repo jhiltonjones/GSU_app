@@ -12,15 +12,12 @@ class ThankYouActivity : AppCompatActivity() {
         setContentView(R.layout.submit_feedback_confirmation_calc)
 
         val homeButton = findViewById<Button>(R.id.btn_home_menuc)
-        val viewFeedbackButton = findViewById<Button>(R.id.btn_view_feedbackc)
+
 
         homeButton.setOnClickListener {
             val intent = Intent(this, ClassList::class.java)
             startActivity(intent)
         }
-        viewFeedbackButton.setOnClickListener {
-            val intent = Intent(this, ClassListView::class.java)
-            startActivity(intent)
-        }
+
     }
 }

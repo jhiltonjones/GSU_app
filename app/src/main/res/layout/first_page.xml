@@ -13,13 +13,6 @@
         android:textSize="20sp"
         android:layout_marginBottom="32dp"/>
 
-    <Button
-        android:id="@+id/btn_edit_review"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Edit Review"
-        android:textSize="20sp" />
 
     <Button
         android:id="@+id/btn_view_review"

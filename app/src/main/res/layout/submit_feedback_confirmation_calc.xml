@@ -22,19 +22,11 @@
         android:layout_height="wrap_content"
         android:text="Home Menu"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_view_feedbackc" />
+        app:layout_constraintTop_toBottomOf="@+id/thank_youc" />
 
-    <Button
-        android:id="@+id/btn_view_feedbackc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="113dp"
-        android:text="View Feedback"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/thank_youc" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
