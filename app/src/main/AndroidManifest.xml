@@ -89,6 +89,11 @@
             android:exported="true"
             android:label="@string/feedback_activity_title"
             android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
+        <activity
+            android:name=".Register"
+            android:exported="true"
+            android:label="@string/feedback_activity_title"
+            android:theme="@style/Theme.StudentFeedbackApp.NoActionBar" />
     </application>
 
 </manifest>
