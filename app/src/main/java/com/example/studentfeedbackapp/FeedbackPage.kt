@@ -37,8 +37,13 @@ class FeedbackPage : AppCompatActivity() {
 
     private fun getReviewsFromFirestore() {
         val db = FirebaseFirestore.getInstance()
-        val className = "Psychology"
-
+        var className = ""
+        val passedName = intent.getStringExtra("classname")
+        if(passedName==null){
+            className ="void"
+        }else {
+            className = passedName
+        }
         db.collection("Classes").document(className).collection("Reviews")
             .get()
             .addOnSuccessListener { result ->
