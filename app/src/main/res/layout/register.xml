@@ -39,15 +39,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_password"
-        android:layout_alignStart="@+id/register_password"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="442dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:text="Register"
         android:textSize="20sp" />
 
-
 </RelativeLayout>
+
