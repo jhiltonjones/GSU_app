@@ -13,12 +13,34 @@
         android:layout_centerHorizontal="true"/>
 
     <EditText
+        android:id="@+id/register_name"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:layout_below="@id/register_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <EditText
+        android:id="@+id/register_id"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Student ID"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/register_name"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+
+    <EditText
         android:id="@+id/register_email"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:layout_below="@id/register_title"
+        android:layout_below="@id/register_id"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"/>
@@ -39,15 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_password"
-        android:layout_alignStart="@+id/register_password"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="442dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginBottom="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:text="Register"
         android:textSize="20sp" />
 
-
 </RelativeLayout>
+
