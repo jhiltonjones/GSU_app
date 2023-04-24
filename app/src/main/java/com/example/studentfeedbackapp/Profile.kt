@@ -1,7 +1,9 @@
 package com.example.studentfeedbackapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -33,6 +35,11 @@ class Profile : AppCompatActivity() {
 
 
         getUserInfoFromFirestore(currentUser)
+        val LogoutButton: Button = findViewById(R.id.logout_button)
+        LogoutButton.setOnClickListener {
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getUserInfoFromFirestore(currentUser:String) {

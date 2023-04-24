@@ -95,7 +95,7 @@ class ClassList : AppCompatActivity() {
             println("test")
         }
 
-        // Set the click listener for the logout button
+        // Set the click listener for the profile button
         val ProfileButton: Button = findViewById(R.id.profile)
         ProfileButton.setOnClickListener {
             val intent = Intent(this, Profile::class.java)
