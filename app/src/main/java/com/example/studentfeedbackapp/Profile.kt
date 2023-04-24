@@ -40,6 +40,13 @@ class Profile : AppCompatActivity() {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
+        val homeButton = findViewById<Button>(R.id.btn_home_menu)
+
+
+        homeButton.setOnClickListener {
+            val intent = Intent(this, ClassList::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getUserInfoFromFirestore(currentUser:String) {

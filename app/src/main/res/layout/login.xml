@@ -40,13 +40,6 @@
         android:textSize="20sp"
         android:layout_marginTop="32dp"/>
 
-    <TextView
-        android:id="@+id/text_forgot_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forgot Password?"
-        android:textSize="16sp"
-        android:layout_marginTop="16dp"/>
     <Button
         android:id="@+id/text_register"
         android:layout_width="wrap_content"
