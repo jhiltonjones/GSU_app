@@ -31,6 +31,9 @@ class Register : AppCompatActivity() {
         val idEditText = findViewById<EditText>(R.id.register_id)
         val emailEditText = findViewById<EditText>(R.id.register_email)
         val passwordEditText = findViewById<EditText>(R.id.register_password)
+        val ageEditText = findViewById<EditText>(R.id.register_age)
+        val majorEditText = findViewById<EditText>(R.id.register_major)
+        val gyearEditText = findViewById<EditText>(R.id.register_gyear)
 
 
 
@@ -39,7 +42,9 @@ class Register : AppCompatActivity() {
             val id = idEditText.text.toString()
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
-            val age = 19
+            val age = ageEditText.text.toString()
+            val major = majorEditText.text.toString()
+            val graduateyear = gyearEditText.text.toString()
 
             // Call the Firebase Authentication API to create a new user with the specified email and password
             auth.createUserWithEmailAndPassword(email, password)
@@ -55,8 +60,8 @@ class Register : AppCompatActivity() {
                         user?.updateProfile(profileUpdates)?.addOnCompleteListener {
                             if (it.isSuccessful) {
                                 // User profile update successful, navigate to the ClassList activity
-                                val intent = Intent(this, ClassList::class.java)
-                                saveFirestore(email,name,age,id)
+                                val intent = Intent(this, Login::class.java)
+                                saveFirestore(email,name,age,id,major,graduateyear)
                                 startActivity(intent)
                                 finish()
                             } else {
@@ -89,7 +94,7 @@ class Register : AppCompatActivity() {
         }
     }
 
-    private fun saveFirestore(Email: String, Name: String, Age: Int, StudentID: String) {
+    private fun saveFirestore(Email: String, Name: String, Age: String, StudentID: String,Major:String,GraduateYear:String) {
         val db = FirebaseFirestore.getInstance()
 
         val reviewMap: HashMap<String, Any> = hashMapOf(
@@ -98,6 +103,8 @@ class Register : AppCompatActivity() {
             "Name" to Name,
             "Age" to Age,
             "StudentID" to StudentID,
+            "Major" to Major,
+            "Graduating_Year" to GraduateYear,
             "Timestamp" to FieldValue.serverTimestamp()
         )
 
