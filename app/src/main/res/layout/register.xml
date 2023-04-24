@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="Register"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/register_name"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:layout_below="@id/register_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <EditText
+        android:id="@+id/register_age"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Student Age"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/register_name"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <EditText
+        android:id="@+id/register_id"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Student ID"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/register_age"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <EditText
+        android:id="@+id/register_major"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Student Major"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/register_id"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+    <EditText
+        android:id="@+id/register_gyear"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Graduating Year"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/register_major"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/register_gyear"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"/>
+
+    <EditText
+        android:id="@+id/register_password"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_below="@id/register_email"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_password"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#000000"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="191dp"
+        android:text="Register"
+        android:textSize="20sp" />
+
+</RelativeLayout>
+

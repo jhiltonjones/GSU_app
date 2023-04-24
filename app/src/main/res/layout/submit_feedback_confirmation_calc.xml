@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/thank_you"
+        android:id="@+id/thank_youc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Thank you for submitting your feedback!"
@@ -18,26 +18,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_home_menu"
+        android:id="@+id/btn_home_menuc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home Menu"
         android:textSize="20sp"
         android:backgroundTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_view_feedback" />
+        app:layout_constraintTop_toBottomOf="@+id/thank_youc" />
 
-    <Button
-        android:id="@+id/btn_view_feedback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="113dp"
-        android:text="View Feedback"
-        android:backgroundTint="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/thank_you" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

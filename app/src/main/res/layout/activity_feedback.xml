@@ -55,7 +55,39 @@
             android:layout_height="wrap_content"
             android:text="Submit"/>
 
+<<<<<<< Updated upstream
     </LinearLayout>
+=======
+
+    <TextView
+        android:id="@+id/review_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Review" />
+
+    <EditText
+        android:id="@+id/review_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write a review..."
+        android:inputType="textMultiLine"
+        android:minLines="3" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#000000"
+        android:text="Submit" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>
+>>>>>>> Stashed changes
 
 
 
